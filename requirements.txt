@@ -6,3 +6,5 @@ requests
 ffmpeg 
 PyPDF3
 opencv-python-headless==4.7.0.68
+pandas
+plotlib
