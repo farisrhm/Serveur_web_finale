@@ -1,0 +1,11 @@
+identifier,login,password,statut
+1,jean.dupont@gmail.com,jean,patient
+2,marie.leveque@gmail.com,marie,patient
+3,louis.vosges@gmail.com,louis,patient
+4,stella.faur,stella,patient
+5,nadeesha93@hotmail.fr,nadeesha,patient
+11,pascal.buchet@gmail.com,pascal,medecin
+22,marc.sabbat@gmail.com,marc,medecin
+33,marine.edwards@gmail.com,marine,medecin
+44,nadeesha.hatharasingha@gmail.com,nadeesha,medecin
+1234,admin,admin,admin

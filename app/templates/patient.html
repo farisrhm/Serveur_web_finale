@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Doc'nect - Espace Patient</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8cae91f94f.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+<style>
+body {
+	font-family: Montserrat;
+	background-image: url('static/images/telesante1.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+table{
+      border-collapse: collapse
+    }
+    
+    tbody{
+    background-color: white;
+    }
+
+    td{
+      border: 1px solid black;
+      padding: 10px;
+    }
+    thead{
+      border: 2px solid black;
+      padding: 10px;
+      background-color: LightSteelBlue
+    }
+
+
+
+
+#title {
+	color:  #748DA6;
+}
+
+#title a {
+	color: #748DA6;
+}
+
+.container-fluid{
+	padding: 3% 15%;
+}
+
+h1 {
+	font-family: Montserrat;
+	font-weight: 900;
+	font-size: 3rem;
+	line-height: 1.5;
+}
+
+h3{
+	color: RosyBrown;
+}
+
+.navbar {
+	padding:  0 0 4.5rem;
+}
+
+.navbar-brand {
+	font-family: Ubuntu;
+	font-size: 2.5rem;
+	font-weight: bolder;
+}
+
+.nav-item {
+	padding: 0 18px;
+}
+
+.nav-link{
+	font-size: 1.2rem;
+	font-family: Montserrat;
+}
+
+.download-button{
+	margin:  5% 3% 5% 0%;
+}
+
+.title-image{
+	width: 60%;
+	transform: rotate(1deg);
+}
+
+h3{
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 1.5rem;
+
+}
+
+
+h3 + p{
+	font-family: Monserrat;
+	color: darkslateblue;
+	text-align: center;
+}
+
+i{
+	color: #ef8172;
+	margin-bottom: 10px;
+}
+
+#features{
+	text-align: center;
+}
+
+
+i:hover{
+	color: darkred;
+
+}
+
+button > i {
+	color: white;
+
+}
+
+.connexion{
+	font-family: initial;
+	font-weight: initial;
+}
+
+h6{
+	color: darkslateblue;
+}
+
+h7{
+	color: darkblue;
+}
+
+form input[type="submit"] {
+    background: LightSteelBlue;
+    color: #748DA6;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}
+
+
+form input[type="text"]
+{
+width:200px
+height:100px
+text-decoration: underline
+background:  RosyBrown;
+color: RosyBrown;
+border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+}
+
+
+.textbox{​​
+border-bottom: 1px solid #9cc9c8;
+text-align: center;
+background-size: cover;
+color: black;
+}​​
+
+
+</style>
+
+
+
+  <section id="title">
+
+    <!-- Nav Bar -->
+  <div class="container-fluid">
+ <nav class="navbar navbar-expand-lg navbar-light ">
+
+  <!-- Bouton -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <a class="navbar-brand" href="/connexion"> <img src="static/images/logo.png"  style="width: 150px; height: 100px; "/>  </a>
+   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav  ml-auto ">
+      <li class="nav-item">
+        <form method="POST" action="/info">
+            <input type=hidden name=id value={{utilisateur.id}} />
+            <input type=hidden name=nom value={{utilisateur.nom}} />
+            <input type=hidden name=address value={{utilisateur.address}} />
+            <input type=hidden name=date value={{utilisateur.date}} />
+            <input type=hidden name=mail value={{utilisateur.mail}} />
+            <input type=hidden name=tel value={{utilisateur.tel}} />
+            <input type=submit name="Mon espace" value="Mon espace" />  
+        </form>
+
+      </li>
+      <li class="nav-item">
+          <form method="POST" action="/rdv">
+             <input type=hidden name="id" value={{utilisateur.id}}>
+             <input type=submit name="patient" value="Mes rendez-vous" /> 
+          </form>
+      </li>
+      <li class="nav-item">
+        <form method="POST" action="/contact">
+             <input type=submit name="messagerie" value="Mes messages" />  
+        </form>
+        </li>
+            <li class="nav-item">
+        <form method="POST" action="/chatbot">
+            <input type=hidden name={{utilisateur.id}} value={{utilisateur.id}}>
+             <input type=submit name="chatbot" value="Chatbot" />  
+        </form>
+      </li>
+      <li class="nav-item">
+        <form method="POST" action="/documents">
+            <input type=hidden name={{utilisateur.id}} value={{utilisateur.id}}>
+             <input type=submit name="recherche" value="Mes documents" />  
+        </form>
+      </li>
+    </ul>
+    </div>
+  </nav>
+  
+  
+
+  <h3> Bienvenue {{session.user}} </h3>
+  
+  
+  
+
+
+    <!-- Title -->
+
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Réservez une consultation avec un néphrologue</h1>
+        <br>
+        <div class="connexion">
+            <form method="POST" action="/recherche">
+                <input type=hidden name=id value={{utilisateur.id}} />
+                <input type=hidden name=nom value={{utilisateur.nom}} />
+                <input type=hidden name=address value={{utilisateur.address}} />
+                <input type=hidden name=date value={{utilisateur.date}} />
+                <input type=hidden name=mail value={{utilisateur.mail}} />
+                <input type=hidden name=tel value={{utilisateur.tel}} />
+                <input type=text name="mot" placeholder="Entrez un nom ou une spécialité"/>
+              <input type=submit name="Rechercher" value="Rechercher" />  
+
+            </form>
+
+        </div>
+
+<br>
+<br>
+        {% block content %} {% endblock %}
+        
+<form method="POST" action="/deconnexion">
+<input type=submit name="action" value="Deconnexion" />
+</form>
+
+</html>
